@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 190777448}
   m_Layer: 0
   m_Name: LimitAreaR
-  m_TagString: Untagged
+  m_TagString: StageLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 618291010}
   m_Layer: 0
   m_Name: LimitAreaD
-  m_TagString: Untagged
+  m_TagString: StageLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 1043613751}
   m_Layer: 0
   m_Name: LimitAreaL
-  m_TagString: Untagged
+  m_TagString: StageLimit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1227,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903015126654610401, guid: 970d23d84714a3545aea9079f8efb86c, type: 3}
       propertyPath: m_Mass
-      value: 0.46
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7903015126654610401, guid: 970d23d84714a3545aea9079f8efb86c, type: 3}
       propertyPath: m_Constraints
@@ -1235,7 +1235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903015126654610401, guid: 970d23d84714a3545aea9079f8efb86c, type: 3}
       propertyPath: m_GravityScale
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7903015126654610413, guid: 970d23d84714a3545aea9079f8efb86c, type: 3}
       propertyPath: m_RootOrder

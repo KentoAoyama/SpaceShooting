@@ -147,13 +147,13 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7940631
+        time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.12049225
+        outSlope: -0.12049225
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.62757117
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -193,7 +193,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 1
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!58 &4933565691120698107
@@ -245,4 +245,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3daef3f52454340888ca93cd01cf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 50
+  _bulletSpeed: 30

@@ -22,4 +22,13 @@ public abstract class EnemyBase : MonoBehaviour
         //Vector2 pos = _initialPosition + new Vector2(_initialPosition.x, posY);
         //transform.position = pos;
     }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "StageLimit")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
