@@ -4,7 +4,28 @@ using UnityEngine;
 
 public class Enemy1Script : EnemyBase
 {
-    // Start is called before the first frame update
+    [SerializeField] float _speedX = 1f;
+    [SerializeField] float _speedY = 1f;
+    [SerializeField] float _amplitude = 1.5f;
+    Vector2 _initialPosition;
 
-    // Update is called once per frame
+
+    void Start()
+    {
+        _initialPosition = transform.position;
+
+        if (transform.position.y > 0)
+        {
+            _speedY *= -1;
+        }
+    }   
+    
+    public override void Move()
+    {
+        float posY = _timer * _speedY;
+        float posX = Mathf.Sin(_speedX * _timer) * _amplitude;
+        Vector2 pos = _initialPosition + new Vector2(posX, posY);
+        transform.position = pos;
+    }
+
 }

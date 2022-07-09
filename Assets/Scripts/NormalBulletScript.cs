@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalBulletScript : MonoBehaviour
+public class NormalBulletScript : BulletBase
 {
-    [SerializeField]float _bulletSpeed = 10;
-    Vector3 _direction;
+    //[SerializeField]float _bulletSpeed = 10;
+    
     Rigidbody2D _rb;
 
     void Start()
@@ -13,18 +13,5 @@ public class NormalBulletScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         
         _rb.velocity = this.transform.up * _bulletSpeed;
-    }
-
-    void Update()
-    {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
     }
 }

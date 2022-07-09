@@ -13,7 +13,6 @@ public class PlayerShooting : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
     void Update()
     {
         _timer += Time.deltaTime;

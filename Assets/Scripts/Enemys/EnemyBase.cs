@@ -4,31 +4,26 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    //[SerializeField] float _speed = 1f;
-    Vector2 _initialPosition;
-    float _timer;
+    public GameObject _player;
+    public float _timer;
+    public float _aliveTimer = 5;
 
-    void Start()
-    {
-        _initialPosition = this.transform.position;
-    }
 
-    // Update is called once per frame
+    public abstract void Move();
+
+
     void Update()
     {
         _timer += Time.deltaTime;
 
-        //float posY = -1 * _timer * _speed;
-        //Vector2 pos = _initialPosition + new Vector2(_initialPosition.x, posY);
-        //transform.position = pos;
+        Move();
     }
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "StageLimit")
+        if (collision.gameObject.tag != "BackGround" && _timer > _aliveTimer)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

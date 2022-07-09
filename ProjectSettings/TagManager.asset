@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - StageLimit
+  - BackGround
   layers:
   - Default
   - TransparentFX

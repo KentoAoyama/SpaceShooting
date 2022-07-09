@@ -5,23 +5,16 @@ using UnityEngine;
 public abstract class BulletBase : MonoBehaviour
 {
     public float _bulletSpeed = 10;
-    //public Rigidbody2D _rb;
     
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-    
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag != "BackGround")
+        {
             Destroy(gameObject);
         }
     }
