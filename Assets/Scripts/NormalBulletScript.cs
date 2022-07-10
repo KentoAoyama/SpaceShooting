@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NormalBulletScript : BulletBase
-{
-    //[SerializeField]float _bulletSpeed = 10;
-    
+{    
     Rigidbody2D _rb;
 
     void Start()

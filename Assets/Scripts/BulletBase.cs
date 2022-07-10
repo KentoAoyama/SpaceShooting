@@ -8,11 +8,6 @@ public abstract class BulletBase : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(collision.gameObject);
-        }
-
         if (collision.gameObject.tag != "BackGround")
         {
             Destroy(gameObject);

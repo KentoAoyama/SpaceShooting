@@ -9,13 +9,13 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] float _shootInterval = 0.2f;
     float _timer;
     
-    void Start()
-    {
-    }
 
     void Update()
     {
-        _timer += Time.deltaTime;
+        if (TimeManager._startGame)
+        {
+            _timer += Time.deltaTime;
+        }
         
         if (Input.GetButton("Fire2") && _timer > _shootInterval)
         {

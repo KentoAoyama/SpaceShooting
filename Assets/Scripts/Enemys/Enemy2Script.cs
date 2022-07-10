@@ -13,6 +13,10 @@ public class Enemy2Script : EnemyBase
         _enemy2Position = transform.position;
 
         _player = GameObject.FindWithTag("Player");
+
+        _enemyScore = 100;
+
+        _ps = GetComponent<ParticleSystem>();
     }
 
 
@@ -22,5 +26,4 @@ public class Enemy2Script : EnemyBase
         _enemy2Position.y += (_player.transform.position.y - _enemy2Position.y) * _moveSpeed;
         transform.position = _enemy2Position;
     }
-
 }

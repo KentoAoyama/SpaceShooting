@@ -13,7 +13,7 @@ public class PlayerMoveScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         _mousePos = Input.mousePosition;
@@ -22,7 +22,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         transform.up = _mousePos - this.gameObject.transform.position;
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && TimeManager._startGame)
         {
             _rb.AddForce(transform.up * _moveSpeed, ForceMode2D.Force);
         }

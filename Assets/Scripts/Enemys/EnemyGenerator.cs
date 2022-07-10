@@ -21,7 +21,10 @@ public class EnemyGenerator : MonoBehaviour
 
     void EnemyGenerate()
     {
-        _timer += Time.deltaTime;
+        if (TimeManager._startGame)
+        {
+            _timer += Time.deltaTime;
+        }
 
 
         if (_timer > _Interval)

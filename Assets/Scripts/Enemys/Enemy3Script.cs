@@ -5,19 +5,20 @@ using UnityEngine;
 public class Enemy3Script : EnemyBase
 {
     [SerializeField] float _moveSpeed = 0.005f;
-    [SerializeField] float _turnSpeed = 0.1f;
     [SerializeField] float _turnLenge = 5;
     Vector2 _enemy2Position;
-    Vector2 _initialPosition;
+    bool _moveChange = false;
 
 
     void Start()
     {
         _enemy2Position = transform.position;
-
-        _initialPosition = transform.position;
-
+        
         _player = GameObject.FindWithTag("Player");
+
+        _enemyScore = 300;
+
+        _ps = GetComponent<ParticleSystem>();
     }
 
 
@@ -25,18 +26,22 @@ public class Enemy3Script : EnemyBase
     {
         float dis = Vector2.Distance(_player.transform.position, transform.position);
 
-        if (dis > _turnLenge)
+        if (dis < _turnLenge)
+        {
+            _moveChange = true;
+        }
+
+        if (!_moveChange)
         {
             _enemy2Position.x += (_player.transform.position.x - _enemy2Position.x) * _moveSpeed;
             _enemy2Position.y += (_player.transform.position.y - _enemy2Position.y) * _moveSpeed;
             transform.position = _enemy2Position;
         }
-        else if (dis <= _turnLenge)
+        else
         {
-            float posX = Mathf.Sin(_turnSpeed * _timer) * _turnLenge;
-            float posY = Mathf.Cos(_turnSpeed * _timer) * _turnLenge;
-            posY += _player.transform.position.y;
-            transform.position = new Vector2(posX, posY);
+            _enemy2Position.x += (_player.transform.position.x - _enemy2Position.x) * _moveSpeed * -1;
+            _enemy2Position.y += (_player.transform.position.y - _enemy2Position.y) * _moveSpeed * -1;
+            transform.position = _enemy2Position;
         }
     }
 }

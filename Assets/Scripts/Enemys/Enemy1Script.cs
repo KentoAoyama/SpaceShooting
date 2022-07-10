@@ -18,8 +18,12 @@ public class Enemy1Script : EnemyBase
         {
             _speedY *= -1;
         }
-    }   
-    
+
+        _enemyScore = 200;
+
+        _ps = GetComponent<ParticleSystem>();
+    }
+
     public override void Move()
     {
         float posY = _timer * _speedY;
@@ -27,5 +31,4 @@ public class Enemy1Script : EnemyBase
         Vector2 pos = _initialPosition + new Vector2(posX, posY);
         transform.position = pos;
     }
-
 }
