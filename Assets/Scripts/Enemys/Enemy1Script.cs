@@ -11,7 +11,7 @@ public class Enemy1Script : EnemyBase
 
 
     void Start()
-    {
+    {       
         _initialPosition = transform.position;
 
         if (transform.position.y > 0)

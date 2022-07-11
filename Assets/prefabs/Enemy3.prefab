@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &-2987621977926464905
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 7903015126654610400, guid: 970d23d84714a3545aea9079f8efb86c, type: 3}
   _timer: 0
-  _aliveTimer: 0.5
+  _aliveTimer: 0.2
   _ps: {fileID: 0}
   _enemyScore: 300
   _moveSpeed: 0.005

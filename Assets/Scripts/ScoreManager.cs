@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text _scoreText = default;
     public static int _score;
 
-    public void Score(int x)
+public void Score(int x)
     {
         _score += x;
     }

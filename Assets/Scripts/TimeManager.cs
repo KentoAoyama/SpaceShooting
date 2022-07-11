@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] Text _timerText = default;
     [SerializeField] Text _countDownText = default;
     public float _timer = 90;
+    float _firstTimer;
 
     float _countdown = 3;
     public static bool _startGame;
@@ -15,6 +17,12 @@ public class TimeManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_firstTimer == 0)
+        {
+            _firstTimer = _timer;
+        }
+        _countdown = 3;
+        _timer = _firstTimer;
         _timerText.text = $"{_timer:f2}";
     }
 
@@ -35,7 +43,7 @@ public class TimeManager : MonoBehaviour
         }
         else if (_timer <= 0)
         {
-            _timerText.text = "Finish";
+            StartCoroutine(GameOver());
         }
     }
 
@@ -52,5 +60,13 @@ public class TimeManager : MonoBehaviour
         _countDownText.text = "Start";
         yield return new WaitForSeconds(1f);
         _countDownText.text = "";
+    }
+
+    IEnumerator GameOver()
+    {
+        _startGame = false;
+        _timerText.text = "Finish";
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("ResultScene");
     }
 }
