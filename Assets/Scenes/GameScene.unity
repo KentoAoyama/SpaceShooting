@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timerText: {fileID: 15284343}
   _countDownText: {fileID: 1764533854}
-  _timer: 10
+  _timer: 90
 --- !u!4 &1196930351
 Transform:
   m_ObjectHideFlags: 0
