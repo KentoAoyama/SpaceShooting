@@ -8,7 +8,7 @@ public abstract class BulletBase : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "BackGround")
+        if (collision.gameObject.tag == "StageLimit" || collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }

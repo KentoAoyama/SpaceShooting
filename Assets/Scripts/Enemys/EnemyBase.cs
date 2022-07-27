@@ -11,7 +11,7 @@ public abstract class EnemyBase : MonoBehaviour
     public int _enemyScore = 0;
     bool _isDeath;
     
-
+    /// <summary>“G‚²‚Æ‚Ì“®‚«‚Ìˆ—</summary>
     public abstract void Move();
 
     void Update()
@@ -53,5 +53,4 @@ public abstract class EnemyBase : MonoBehaviour
     {
         FindObjectOfType<ScoreManager>().Score(_enemyScore);
     }
-
 }

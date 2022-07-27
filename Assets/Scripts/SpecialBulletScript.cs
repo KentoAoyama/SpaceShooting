@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpecialBulletScript : BulletBase
 {
     Rigidbody2D _rb;
+    float _timer;
 
     void Start()
     {
@@ -15,5 +16,12 @@ public class SpecialBulletScript : BulletBase
     {
         Vector2 velo = PlayerMoveScript._mousePos - gameObject.transform.position;
         _rb.AddForce(velo * _bulletSpeed, ForceMode2D.Force);
+
+        _timer += Time.deltaTime;
+
+        if (_timer > 10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
